@@ -283,9 +283,9 @@ export default function CatalogPage() {
                 <Image
                   src={`/logos/brand-${num}.png`}
                   alt={`Brand ${num}`}
-                  width={140}
-                  height={70}
-                  className="h-14 md:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
+                  width={180}
+                  height={90}
+                  className="h-[72px] md:h-[104px] w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
@@ -298,9 +298,9 @@ export default function CatalogPage() {
                 <Image
                   src={`/logos/brand-${num}.png`}
                   alt={`Brand ${num}`}
-                  width={140}
-                  height={70}
-                  className="h-14 md:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
+                  width={180}
+                  height={90}
+                  className="h-[72px] md:h-[104px] w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
