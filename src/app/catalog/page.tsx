@@ -5,103 +5,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-const galleryItems = [
+const catalogItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2080&auto=format&fit=crop",
-    category: "Classic",
-    title: "Navy Business",
-    height: "tall",
+    image: "/catalog-1.png",
+    title: "Classic Elegance",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop",
-    category: "Business",
-    title: "Charcoal Gray",
-    height: "normal",
+    image: "/catalog-2.png",
+    title: "Sophisticated Style",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?q=80&w=2074&auto=format&fit=crop",
-    category: "Formal",
-    title: "Black Tie",
-    height: "normal",
-  },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=2065&auto=format&fit=crop",
-    category: "Casual",
-    title: "Italian Linen",
-    height: "tall",
-  },
-  {
-    id: 5,
-    image: "https://images.unsplash.com/photo-1558171813-4c088753af8f?q=80&w=2071&auto=format&fit=crop",
-    category: "Fabric",
-    title: "Premium Wool",
-    height: "normal",
-  },
-  {
-    id: 6,
-    image: "https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?q=80&w=2080&auto=format&fit=crop",
-    category: "Details",
-    title: "Hand Stitching",
-    height: "tall",
-  },
-  {
-    id: 7,
-    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=2071&auto=format&fit=crop",
-    category: "Atelier",
-    title: "Our Space",
-    height: "normal",
-  },
-  {
-    id: 8,
-    image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=2187&auto=format&fit=crop",
-    category: "Classic",
-    title: "Double Breasted",
-    height: "normal",
-  },
-  {
-    id: 9,
-    image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?q=80&w=2080&auto=format&fit=crop",
-    category: "Business",
-    title: "Modern Fit",
-    height: "tall",
-  },
-  {
-    id: 10,
-    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop",
-    category: "Consultation",
-    title: "First Meeting",
-    height: "normal",
-  },
-  {
-    id: 11,
-    image: "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=2065&auto=format&fit=crop",
-    category: "Fabric",
-    title: "Cashmere Blend",
-    height: "normal",
-  },
-  {
-    id: 12,
-    image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=2235&auto=format&fit=crop",
-    category: "Casual",
-    title: "Weekend Style",
-    height: "tall",
+    image: "/catalog-3.png",
+    title: "Timeless Craftsmanship",
   },
 ];
 
-const categories = ["All", "Classic", "Business", "Formal", "Casual", "Fabric", "Details"];
-
 export default function CatalogPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
-
-  const filteredItems =
-    selectedCategory === "All"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === selectedCategory);
+  const [selectedImage, setSelectedImage] = useState<typeof catalogItems[0] | null>(null);
 
   return (
     <>
@@ -124,84 +47,34 @@ export default function CatalogPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-8 px-6 bg-background sticky top-20 z-30">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-2 md:gap-4"
-          >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 font-serif text-xs tracking-[0.15em] transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-primary text-white"
-                    : "bg-transparent text-text/60 hover:text-primary"
-                }`}
-              >
-                {category.toUpperCase()}
-              </button>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Masonry Gallery */}
+      {/* Catalog Section - Vertical Layout */}
       <section className="py-8 md:py-16 px-4 md:px-6 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            layout
-            className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredItems.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="mb-4 md:mb-6 break-inside-avoid"
-                >
-                  <div
-                    onClick={() => setSelectedImage(item)}
-                    className="relative group cursor-pointer overflow-hidden"
-                  >
-                    <div
-                      className={`relative ${
-                        item.height === "tall" ? "h-[400px] md:h-[500px]" : "h-[280px] md:h-[350px]"
-                      }`}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-text/0 group-hover:bg-text/40 transition-all duration-500" />
-
-                      {/* Content on hover */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <span className="font-serif text-xs tracking-[0.3em] text-white/80 mb-2">
-                          {item.category.toUpperCase()}
-                        </span>
-                        <span className="font-serif text-lg md:text-xl tracking-wider text-white">
-                          {item.title}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <div className="space-y-4 md:space-y-6">
+            {catalogItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative w-full cursor-pointer group"
+                onClick={() => setSelectedImage(item)}
+              >
+                <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 80vw"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-text/0 group-hover:bg-text/20 transition-all duration-500" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -229,7 +102,7 @@ export default function CatalogPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-4xl h-[70vh] md:h-[80vh]"
+              className="relative w-full max-w-6xl h-[80vh] md:h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -240,9 +113,6 @@ export default function CatalogPage() {
                 sizes="100vw"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-text/80 to-transparent">
-                <span className="font-serif text-xs tracking-[0.3em] text-white/60 block mb-2">
-                  {selectedImage.category.toUpperCase()}
-                </span>
                 <span className="font-serif text-xl md:text-2xl tracking-wider text-white">
                   {selectedImage.title}
                 </span>
