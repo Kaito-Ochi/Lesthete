@@ -11,8 +11,8 @@ export default function AboutPage() {
         {/* Background */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=2071&auto=format&fit=crop"
-            alt="Italian architecture"
+            src="/philosophy.png"
+            alt="Our Philosophy"
             fill
             priority
             className="object-cover opacity-30"
