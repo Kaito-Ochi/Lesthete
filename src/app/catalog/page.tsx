@@ -21,6 +21,26 @@ const catalogItems = [
     image: "/catalog-3.png",
     title: "Timeless Craftsmanship",
   },
+  {
+    id: 4,
+    image: "/catalog-4.png",
+    title: "Refined Luxury",
+  },
+  {
+    id: 5,
+    image: "/catalog-5.png",
+    title: "Modern Sophistication",
+  },
+  {
+    id: 6,
+    image: "/catalog-6.png",
+    title: "Elegant Details",
+  },
+  {
+    id: 7,
+    image: "/catalog-7.png",
+    title: "Distinguished Style",
+  },
 ];
 
 export default function CatalogPage() {
