@@ -189,10 +189,10 @@ export default function AboutPage() {
       {/* Visual Break */}
       <section className="relative h-[60vh] md:h-[70vh]">
         <Image
-          src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=2065&auto=format&fit=crop"
-          alt="Tailoring craftsmanship"
+          src="/art-of-being.png"
+          alt="The Art of Being Yourself"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-text/30" />
@@ -221,8 +221,8 @@ export default function AboutPage() {
           >
             <div className="relative h-[400px] md:h-[500px]">
               <Image
-                src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?q=80&w=2080&auto=format&fit=crop"
-                alt="Our atelier"
+                src="/atelier.jpg"
+                alt="Our atelier - WeWork LINKS UMEDA"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
