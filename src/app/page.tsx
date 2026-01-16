@@ -205,13 +205,13 @@ export default function HomePage() {
       <section className="relative py-32 md:py-48 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?q=80&w=2074&auto=format&fit=crop"
-            alt="Tailoring atmosphere"
+            src="/begin-story.png"
+            alt="Begin Your Story"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-background/85" />
+          <div className="absolute inset-0 bg-background/75" />
         </div>
 
         <motion.div
