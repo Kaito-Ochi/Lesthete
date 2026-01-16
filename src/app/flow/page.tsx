@@ -11,8 +11,7 @@ const flowSteps = [
     titleJa: "カウンセリング",
     description:
       "まずは、あなたのスタイルや理想のイメージをお聞かせください。どんなシーンで着たいか、どんな印象を与えたいか。遠慮なく「わがまま」をお話しください。",
-    image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop",
+    image: "/flow-counseling.jpg",
   },
   {
     number: "02",
@@ -20,8 +19,7 @@ const flowSteps = [
     titleJa: "生地選び",
     description:
       "Loro Piana、Zegna、Scabal など、世界最高峰のミルから厳選した生地をご用意。触感、光沢、ドレープ。五感で「運命の一枚」をお選びください。",
-    image:
-      "https://images.unsplash.com/photo-1558171813-4c088753af8f?q=80&w=2071&auto=format&fit=crop",
+    image: "/flow-fabric.png",
   },
   {
     number: "03",
@@ -29,8 +27,7 @@ const flowSteps = [
     titleJa: "裏地選び",
     description:
       "袖を通すたびに心躍る、こだわりの裏地。クラシックな無地から、遊び心のある柄まで。見えない部分にこそ、あなたらしさを。",
-    image:
-      "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=2065&auto=format&fit=crop",
+    image: "/flow-lining.png",
   },
   {
     number: "04",
@@ -38,8 +35,7 @@ const flowSteps = [
     titleJa: "ボタン選び",
     description:
       "水牛、ナット、貝。素材ひとつで印象が変わる、小さくも大切なディテール。手に触れるたびに感じる、上質な存在感を。",
-    image:
-      "https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?q=80&w=2080&auto=format&fit=crop",
+    image: "/flow-button.jpg",
   },
   {
     number: "05",
@@ -47,8 +43,7 @@ const flowSteps = [
     titleJa: "採寸",
     description:
       "20以上の箇所を精密に計測。身体のクセや姿勢まで考慮し、あなただけのパターンを作成します。この工程が、至高のフィット感を生み出します。",
-    image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop",
+    image: "/flow-measurement.jpg",
   },
   {
     number: "06",
@@ -56,8 +51,7 @@ const flowSteps = [
     titleJa: "完成・お渡し",
     description:
       "熟練の職人が丹精込めて仕上げた、世界に一着だけのスーツ。お渡しの瞬間、新しいあなたの物語が始まります。",
-    image:
-      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2080&auto=format&fit=crop",
+    image: "/flow-completion.png",
   },
 ];
 
